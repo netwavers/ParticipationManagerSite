@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tanuki-history-migrator"
+version = "0.1.0"
+description = "Google Takeout chat history parser and TANUKI knowledge base compiler"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "Tanuki-chan", email = "tanuki@example.com" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "psutil>=5.9.0",
+]
+
+[project.scripts]
+tanuki-migrate = "tanuki_history_migrator.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["tanuki_history_migrator"]
